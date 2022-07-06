@@ -78,7 +78,8 @@ body {
 .grid-layout {
     display: grid;
     grid-template-columns: repeat(4, minmax(100px, 1fr));
-    grid-template-rows: 250px 80% 1fr 1fr;
+    grid-template-rows: auto minmax(300px, auto) auto auto;
+    height: 100vh;
 }
 
 /* Page Header Start */
@@ -86,19 +87,19 @@ body {
 header {
     grid-column: 1/5;
     grid-row: 1/2;
-    width: 100%;
-    height: 100%;
-    min-height: 250px;
-    background: url("img/BG-pattern.png");
-    background-color: #f5ebe0;
-    background-size: 21rem;
     display: grid;
     justify-content: center;
     align-content: center;
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    background: url("img/BG-pattern.png");
+    background-color: #f5ebe0;
+    background-size: 21rem;
 }
 
 header h2 {
-    font-size: 4rem;
+    font-size: 2rem;
     letter-spacing: 0.15rem;
     font-weight: 600;
     color: #404040;
@@ -109,41 +110,33 @@ header h2 {
 
 .left {
     grid-column: 1/3;
-    grid-row: 2/5;
-    width: 100%;
+    grid-row: 2/4;
     background: #ffffff;
     color: #404040;
-    display: grid;
-    grid-template-columns: minmax(100px, 1fr);
-    grid-auto-rows: auto;
+    padding: 2rem 1.5rem;
 }
 
 article {
-    background: #ffffff;
-    color: #404040;
-    padding: 4rem;
+    margin: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px dotted #404040;
 }
-
-hr {
-  border: 2px dotted;
-  border-style: none none dotted;
-  color: #404040;
-  margin: 0 4rem;
+article:last-child {
+    border-bottom: none;
 }
-
 
 article h3 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
 
 article p{
-    font-size: 2.2rem;
-    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
 }
 
 article time {
-    font-size: 2rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
@@ -153,27 +146,23 @@ article time {
 section {
     grid-column: 3/5;
     grid-row: 2/3;
-    width: 100%;
     text-align: center;
-    margin-bottom: 35rem;
 }
-
 section img {
-    width: 30%;
-    max-width: 400px;
+    max-width: 150px;
     height: auto;
-    padding: 4.5rem 0 3rem 0;
+    padding: 1.5rem 0 1rem 0;
 }
 
 section h2 {
     color: #cc9965;
-    font-size: 3.5rem;
+    font-size: 1.4rem;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
 }
 
 section p {
-    font-size: 2.3rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #a8a7a9;
 }
@@ -185,24 +174,17 @@ nav {
     grid-column: 3/4;
     grid-row: 3/4;
 }
-
 nav ul {
-    display: grid;
-    grid-template-columns: minmax(100px, 1fr);
-    grid-template-rows: auto;
     list-style-type: none;
-    height: 100%;
-    width: 100%;
 }
 
 nav ul li  {
     display: grid;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
+    font-size: 1rem;
     font-weight: 700;
-    padding: 50px;
-    text-align: center;
+    padding: 2.6rem;
 }
 
 nav ul li:nth-of-type(1) {
@@ -233,162 +215,72 @@ nav ul li a {
 footer {
     grid-column: 4/5;
     grid-row: 3/4;
-    padding: 50px;
-    background: #262427;
     color: #ffffff;
 }
 
 footer h3 {
-    font-size: 3.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    margin: 3rem 2rem 4rem 2rem;
+    margin: 2rem 2rem 1.5rem 2rem;
 }
 
 footer p {
-    margin: 0 2rem;
-    font-size: 2rem;
-    font-weight: 500;
+    margin: 0.3rem 2rem;
+    font-size: 1rem;
     font-style: italic;
 }
-
 /* Footer End */
 
-@media (max-width: 98rem) {
-
-    header h2 {
-        font-size: 3rem;
-        font-weight: 600;
-    }
-
-    article h3 {
-        font-size: 2rem;
-    }
-    
-    article p{
-        font-size: 1.5rem;
-    }
-    
-    article time {
-        font-size: 1.6rem;
-    }
-
-    section h2 {
-        font-size: 2.2rem;
-    }
-    
-    section p {
-        font-size: 1.6rem;
-    }
-
-    nav ul li  {
-        font-size: 2rem;
-    }
-
-    footer h3 {
-        font-size: 2.2rem;
-    }
-    
-    footer p {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 76rem) {
-
-    header h2 {
-        font-size: 2.6rem;
-    }
-
-    article h3 {
-        font-size: 1.8rem;
-    }
-    
-    article p{
-        font-size: 1.4rem;
-    }
-    
-    article time {
-        font-size: 1.5rem;
-    }
-
-    section h2 {
-        font-size: 2rem;
-    }
-    
-    section p {
-        font-size: 1.4rem;
-    }
-
-    nav ul li  {
-        font-size: 1.8rem;
-    }
-
-    footer h3 {
-        font-size: 2rem;
-    }
-    
-    footer p {
-        font-size: 1.4rem;
-    }
-}
-
+/* Tablet */
 @media (max-width: 62rem) {
 
     .grid-layout {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(100px, 1fr));
-        grid-template-rows: 100px 80% 1fr 1fr 200px;
+        grid-template-rows: auto minmax(280px, auto) auto auto auto;
     }
 
     /* Page Header Start */
-
+    
     header {
-        grid-column: 1/3;
+        grid-column: 1/5;
         grid-row: 1/2;
+        width: 100%;
+        height: 100%;
         min-height: 100px;
-        background-size: 10rem;
+        background-size: 9rem;
     }
 
     header h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+        font-weight: 600;
     }
 
     /* Page Header End */
     /* Page Left side start */
 
     .left {
-        grid-column: 1/2;
-        grid-row: 2/5;
-        padding: 1rem;
+        grid-column: 1/3;
+        grid-row: 2/4;
+        padding: 1rem .5rem;
     }
 
     article {
-        padding: 1rem;
+        margin: .8rem;
+        padding-bottom: 1rem;
     }
 
-    article:nth-of-type(1) {
-        padding-top: 2rem;
-    }
-    article:nth-last-of-type(1) {
-        padding-bottom: 3rem;
-    }
-    
-    hr {
-        margin: 1rem;
-    }
-    
     article h3 {
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    article p{
         font-size: 1.1rem;
         margin-bottom: 0.5rem;
     }
-    
+
+    article p{
+        font-size: .9rem;
+        margin-bottom: 0.4rem;
+    }
+
     article time {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 600;
     }
 
@@ -396,64 +288,55 @@ footer p {
     /* Image with text box Start */
 
     section {
-        grid-column: 2/3;
+        grid-column: 3/5;
         grid-row: 2/3;
-        margin-bottom: 8rem;
+    }
+    section img {
+        max-width: 120px;
+        height: auto;
+        padding: 1.5rem 0 1rem 0;
     }
 
-    section img {
-        width: 30%;
-        max-width: 400px;
-        height: auto;
-        padding: 2rem 0;
-    }
-    
     section h2 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         letter-spacing: 0;
     }
-    
-     section p {
-        font-size: 1rem;
+
+    section p {
+        font-size: .8rem;
     }
 
     /* Image with text box End */
     /* Navigation Start */
 
     nav {
-        grid-column: 2/3;
+        grid-column: 3/5;
         grid-row: 3/4;
     }
 
-    nav ul {
-        height: 45%;
-    }
-    
     nav ul li  {
-        font-size: 1.4rem;
-        padding: 40px;
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 2rem;
     }
 
     /* Navigation End */
     /* Footer Start */
 
     footer {
-        grid-column: 1/3;
-        grid-row: 5/6;
-        padding: 2rem;
+        grid-column: 1/5;
+        grid-row: 4/5;
     }
 
     footer h3 {
-        font-size: 2rem;
-        margin: 0 0 2rem 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 2rem 1.5rem 1.6rem 1.5rem;
     }
-    
+
     footer p {
-        margin: 0;
+        margin: 0.3rem 1.5rem;
         font-size: 1rem;
-    }
-    footer p:last-of-type {
-        margin-bottom: 1rem;
     }
     /* Footer End */
 }
@@ -461,9 +344,8 @@ footer p {
 @media (max-width: 38rem) {
 
     .grid-layout {
-        display: grid;
         grid-template-columns: minmax(100px, 1fr);
-        grid-template-rows: minmax(100px, 200px) 80px 1fr auto auto;
+        grid-template-rows: minmax(220px, 400px) auto 1fr auto auto;
     }
 
     /* Page Header Start */
@@ -471,13 +353,15 @@ footer p {
     header {
         grid-column: 1/2;
         grid-row: 2/3;
+        height: 100%;
         min-height: 80px;
-        background-size: 5rem;
+        background-size: 6rem;
     }
 
     header h2 {
         font-size: 1.2rem;
-        font-weight: 700;
+        letter-spacing: 0;
+        font-weight: 600;
     }
 
     /* Page Header End */
@@ -486,36 +370,27 @@ footer p {
     .left {
         grid-column: 1/2;
         grid-row: 3/4;
-        padding: 0.5rem;
+        padding: .8rem .4rem;
     }
 
     article {
-        padding: 0.5rem;
+        margin: .8rem;
+        padding-bottom: 1rem;
     }
 
-    article:nth-of-type(1) {
-        padding-top: 1rem;
-    }
-    article:nth-last-of-type(1) {
-        padding-bottom: 2rem;
-    }
-    
-    hr {
-        margin: 0.5rem;
-    }
-    
     article h3 {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin-bottom: 0.5rem;
     }
-    
+
     article p{
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
+        font-size: .9rem;
+        margin-bottom: 0.4rem;
     }
-    
+
     article time {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        font-weight: 600;
     }
 
     /* Page Left side End */
@@ -524,21 +399,19 @@ footer p {
     section {
         grid-column: 1/2;
         grid-row: 1/2;
-        margin-bottom: 1rem;
+    }
+    section img {
+        max-width: 100px;
+        padding: 1.5rem 0 1rem 0;
     }
 
-    section img {
-        width: 20%;
-        max-width: 320px;
-        padding: 1rem 0;
-    }
-    
     section h2 {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        letter-spacing: 0;
     }
-    
-     section p {
-        font-size: 0.7rem;
+
+    section p {
+        font-size: .8rem;
     }
 
     /* Image with text box End */
@@ -549,13 +422,8 @@ footer p {
         grid-row: 4/5;
     }
 
-    nav ul {
-        height: 25%;
-    }
-    
     nav ul li  {
-        font-size: 1rem;
-        padding: 20px;
+        padding: 1.5rem;
     }
 
     /* Navigation End */
@@ -564,19 +432,19 @@ footer p {
     footer {
         grid-column: 1/2;
         grid-row: 5/6;
-        padding: 2rem 2rem 0 2rem;
     }
 
     footer h3 {
-        font-size: 1.2rem;
-        margin: 0 0 1rem 0;
+        font-size: 1rem;
+        margin: 1.5rem 1rem 1.6rem 1rem;
     }
-    
+
     footer p {
-        font-size: 0.8rem;
+        margin: 0.3rem 1rem;
+        font-size: 1rem;
     }
-    footer p:last-of-type {
-        margin-bottom: 0.8rem;
+    footer p:last-child {
+        margin-bottom: 1rem;
     }
     /* Footer End */
 }
